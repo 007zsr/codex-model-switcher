@@ -1,0 +1,30 @@
+name: Cleanup encrypted transfer payload
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: transfer-20260907-0fff7d79
+      EXPIRES_AT_UTC: '2026-09-10T09:25:00Z'
+    steps:
+      - name: Delete encrypted release after expiry
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          now="$(date -u +%s)"
+          expires="$(date -u -d "$EXPIRES_AT_UTC" +%s)"
+          if [ "$now" -lt "$expires" ]; then
+            echo "Transfer payload has not expired yet."
+            exit 0
+          fi
+          gh release delete "$RELEASE_TAG" --repo "$REPO" --cleanup-tag --yes || true
+
