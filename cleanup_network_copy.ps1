@@ -9,6 +9,12 @@ param(
 )
 
 $ErrorActionPreference = 'Continue'
+try {
+    [Console]::OutputEncoding = [Text.Encoding]::UTF8
+    $OutputEncoding = [Text.Encoding]::UTF8
+}
+catch {
+}
 
 if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
     Write-Warning 'GitHub CLI was not found. Network cleanup must be done manually.'
@@ -34,4 +40,3 @@ if ($DeleteRepo) {
         Write-Warning 'Repository deletion failed. This usually means the token lacks delete_repo permission. The encrypted release may already be gone; delete the temporary repository manually if needed.'
     }
 }
-

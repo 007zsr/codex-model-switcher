@@ -9,17 +9,11 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-
-function Get-PlainTextFromSecureString {
-    param([Parameter(Mandatory = $true)][securestring]$SecureString)
-
-    $ptr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecureString)
-    try {
-        return [Runtime.InteropServices.Marshal]::PtrToStringBSTR($ptr)
-    }
-    finally {
-        [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ptr)
-    }
+try {
+    [Console]::OutputEncoding = [Text.Encoding]::UTF8
+    $OutputEncoding = [Text.Encoding]::UTF8
+}
+catch {
 }
 
 function Require-Command {
@@ -57,11 +51,9 @@ if (-not (Test-Path -LiteralPath $encryptedFile)) {
 }
 
 $tarFile = Join-Path $WorkDir 'payload.tar.gz'
-$secure = Read-Host 'Enter migration key' -AsSecureString
-$key = Get-PlainTextFromSecureString -SecureString $secure
 
 Write-Host 'Decrypting payload ...'
-powershell -ExecutionPolicy Bypass -File $cryptoScript -Mode Decrypt -InputFile $encryptedFile -OutputFile $tarFile -Passphrase $key
+powershell -ExecutionPolicy Bypass -File $cryptoScript -Mode Decrypt -InputFile $encryptedFile -OutputFile $tarFile
 
 Write-Host 'Extracting payload ...'
 tar -xzf $tarFile -C $extractDir
@@ -95,4 +87,3 @@ if (-not $SkipNetworkCleanup) {
 }
 
 Write-Host 'Restore complete.'
-
