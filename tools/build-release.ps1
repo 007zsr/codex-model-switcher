@@ -6,8 +6,7 @@ $package = Join-Path $output ('CodexModelSwitcher-' + $version + '-windows')
 if (Test-Path -LiteralPath $package) { throw 'Release staging directory already exists. Choose a fresh staging directory before rebuilding.' }
 New-Item -ItemType Directory -Path $package -Force | Out-Null
 $files = @('CodexModelSwitcher.exe','Program.cs','Launcher.ps1','build.ps1','create-shortcut.ps1',
-    'deepseek-models.json','kimi-models.json','README.md','DOWNLOAD.md','CHANGELOG.md',
-    '第一次使用（先看我）.txt','发布包说明.txt')
+    'deepseek-models.json','kimi-models.json','README.md','DOWNLOAD.md','CHANGELOG.md')
 foreach ($file in $files) { Copy-Item -LiteralPath (Join-Path $root $file) -Destination $package }
 Copy-Item -LiteralPath (Join-Path $root 'assets') -Destination $package -Recurse
 Copy-Item -LiteralPath (Join-Path $root 'docs') -Destination $package -Recurse
