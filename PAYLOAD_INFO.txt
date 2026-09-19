@@ -1,7 +1,0 @@
-﻿Payload asset: payload.enc
-Release tag: transfer-20260907-0fff7d79
-Size bytes: 22033447
-SHA256: C5DEFCC107BFC10E2AFD2ED5125B301011CBBFF6658468512714D2C75A63696F
-Expires UTC fallback: 2026-09-10T09:25:00Z
-
-The migration key is not stored here.

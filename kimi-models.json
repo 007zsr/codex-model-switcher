@@ -1,0 +1,211 @@
+{
+  "models": [
+    {
+      "slug": "kimi-k3",
+      "display_name": "Kimi K3（开放平台 API，推荐）",
+      "description": "使用 platform.kimi.com 创建的 API Key，按量计费；无需 Kimi Code 会员",
+      "default_reasoning_level": "high",
+      "supported_reasoning_levels": [
+        {
+          "effort": "low",
+          "description": "快速思考"
+        },
+        {
+          "effort": "high",
+          "description": "增强思考"
+        },
+        {
+          "effort": "max",
+          "description": "深度思考"
+        }
+      ],
+      "shell_type": "shell_command",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 0,
+      "base_instructions": "",
+      "supports_reasoning_summaries": true,
+      "default_reasoning_summary": "none",
+      "support_verbosity": false,
+      "truncation_policy": {
+        "mode": "bytes",
+        "limit": 10000
+      },
+      "context_window": 1048576,
+      "max_context_window": 1048576,
+      "effective_context_window_percent": 95,
+      "supports_parallel_tool_calls": true,
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "prefer_websockets": false,
+      "apply_patch_tool_type": "freeform"
+    },
+    {
+      "slug": "kimi-for-coding",
+      "display_name": "Kimi for Coding（自动升级，推荐） [Code会员]",
+      "description": "Kimi Code 固定模型 ID；后端会自动升级，最高 1M 上下文",
+      "default_reasoning_level": "high",
+      "supported_reasoning_levels": [
+        {
+          "effort": "low",
+          "description": "快速思考"
+        },
+        {
+          "effort": "high",
+          "description": "增强思考"
+        },
+        {
+          "effort": "max",
+          "description": "深度思考"
+        }
+      ],
+      "shell_type": "shell_command",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 1,
+      "base_instructions": "",
+      "supports_reasoning_summaries": true,
+      "default_reasoning_summary": "none",
+      "support_verbosity": false,
+      "truncation_policy": {
+        "mode": "bytes",
+        "limit": 10000
+      },
+      "context_window": 1048576,
+      "max_context_window": 1048576,
+      "effective_context_window_percent": 95,
+      "supports_parallel_tool_calls": true,
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image"
+      ]
+    },
+    {
+      "slug": "k3-256k",
+      "display_name": "K3 256K（节省配额） [Code会员]",
+      "description": "K3，256K 上下文",
+      "default_reasoning_level": "high",
+      "supported_reasoning_levels": [
+        {
+          "effort": "low",
+          "description": "快速思考"
+        },
+        {
+          "effort": "high",
+          "description": "增强思考"
+        },
+        {
+          "effort": "max",
+          "description": "深度思考"
+        }
+      ],
+      "shell_type": "shell_command",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 2,
+      "base_instructions": "",
+      "supports_reasoning_summaries": true,
+      "default_reasoning_summary": "none",
+      "support_verbosity": false,
+      "truncation_policy": {
+        "mode": "bytes",
+        "limit": 10000
+      },
+      "context_window": 262144,
+      "max_context_window": 262144,
+      "effective_context_window_percent": 95,
+      "supports_parallel_tool_calls": true,
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image"
+      ]
+    },
+    {
+      "slug": "k3",
+      "display_name": "K3 [Code会员]",
+      "description": "K3，按会员档位支持 256K 或最高 1M 上下文",
+      "default_reasoning_level": "high",
+      "supported_reasoning_levels": [
+        {
+          "effort": "low",
+          "description": "快速思考"
+        },
+        {
+          "effort": "high",
+          "description": "增强思考"
+        },
+        {
+          "effort": "max",
+          "description": "深度思考"
+        }
+      ],
+      "shell_type": "shell_command",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 3,
+      "base_instructions": "",
+      "supports_reasoning_summaries": true,
+      "default_reasoning_summary": "none",
+      "support_verbosity": false,
+      "truncation_policy": {
+        "mode": "bytes",
+        "limit": 10000
+      },
+      "context_window": 1048576,
+      "max_context_window": 1048576,
+      "effective_context_window_percent": 95,
+      "supports_parallel_tool_calls": true,
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image"
+      ]
+    },
+    {
+      "slug": "kimi-for-coding-highspeed",
+      "display_name": "Kimi for Coding Highspeed [Code会员]",
+      "description": "Kimi Code 高速模型，256K 上下文；需要相应会员档位",
+      "default_reasoning_level": "high",
+      "supported_reasoning_levels": [
+        {
+          "effort": "low",
+          "description": "快速思考"
+        },
+        {
+          "effort": "high",
+          "description": "增强思考"
+        },
+        {
+          "effort": "max",
+          "description": "深度思考"
+        }
+      ],
+      "shell_type": "shell_command",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 4,
+      "base_instructions": "",
+      "supports_reasoning_summaries": true,
+      "default_reasoning_summary": "none",
+      "support_verbosity": false,
+      "truncation_policy": {
+        "mode": "bytes",
+        "limit": 10000
+      },
+      "context_window": 262144,
+      "max_context_window": 262144,
+      "effective_context_window_percent": 95,
+      "supports_parallel_tool_calls": true,
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image"
+      ]
+    }
+  ]
+}

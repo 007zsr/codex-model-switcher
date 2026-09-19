@@ -1,0 +1,13 @@
+Codex 模型切换器 2.7.1
+
+1. 完整解压本文件夹，双击 CodexModelSwitcher.exe。
+2. 选择 ChatGPT、DeepSeek 或 Kimi。DeepSeek 和 Kimi 需要自己的 API Key。
+3. 选择模型，点击“只保存配置”或“切换并重启 ChatGPT”。
+4. 重启会中断正在运行的 ChatGPT / Codex 任务，请先保存需要的内容。
+
+不要只移动 EXE；请保留 assets、deepseek-models.json 和 kimi-models.json。
+日志、报告、备份与设置默认保存在程序目录的 data 文件夹。
+API Key 由 Windows 凭据管理器保存。安装目录需有写入权限。
+
+如果 EXE 无法启动，可使用 Launcher.ps1 兼容启动入口；不要关闭系统安全防护。
+完整中文介绍见 README.md，下载说明见 DOWNLOAD.md，更新内容见 CHANGELOG.md。
